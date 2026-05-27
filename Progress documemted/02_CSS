@@ -1,0 +1,322 @@
+/* ── Google Fonts are loaded via <link> in each HTML file ── */
+
+/* ────────────────────────────────────────────
+   VARIABLES
+──────────────────────────────────────────── */
+:root {
+  --bg:         #EEEBE3;
+  --ink:        #19170F;
+  --ink-muted:  rgba(25, 23, 15, 0.60);
+  --ink-faint:  rgba(25, 23, 15, 0.18);
+  --rule:       1px solid rgba(25, 23, 15, 0.15);
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono:  'Syne Mono', monospace;
+
+  --space-side: 52px;
+  --space-md:   32px;
+}
+
+/* ────────────────────────────────────────────
+   RESET
+──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ────────────────────────────────────────────
+   BASE
+──────────────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ────────────────────────────────────────────
+   TYPOGRAPHY HELPERS
+──────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+/* ────────────────────────────────────────────
+   HEADER
+──────────────────────────────────────────── */
+.site-header {
+  padding: 40px var(--space-side) 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  border-bottom: var(--rule);
+}
+
+.site-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: clamp(42px, 7vw, 62px);
+  font-weight: 200;
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+.site-title em {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  line-height: 1.9;
+}
+
+/* ────────────────────────────────────────────
+   NAV
+──────────────────────────────────────────── */
+.site-nav {
+  padding: 0 var(--space-side);
+  display: flex;
+  gap: 0;
+  border-bottom: var(--rule);
+}
+
+.site-nav a {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 15px 28px 15px 0;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.site-nav a:first-child {
+  padding-left: 0;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* ────────────────────────────────────────────
+   BODY GRID
+──────────────────────────────────────────── */
+.page-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: var(--rule);
+}
+
+/* ────────────────────────────────────────────
+   SIDEBAR
+──────────────────────────────────────────── */
+.sidebar {
+  padding: 32px 28px 32px var(--space-side);
+  border-right: var(--rule);
+}
+
+.sidebar-block {
+  margin-bottom: 28px;
+}
+
+.sidebar-block:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-text {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  margin-top: 10px;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  font-size: 8.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border: var(--rule);
+  padding: 3px 8px;
+}
+
+/* ────────────────────────────────────────────
+   MAIN CONTENT
+──────────────────────────────────────────── */
+.main-content {
+  padding: 32px var(--space-side) 32px 40px;
+}
+
+.intro {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 36px;
+  max-width: 52ch;
+}
+
+.intro em {
+  font-style: italic;
+  color: var(--ink-muted);
+}
+
+.section-label {
+  margin-bottom: 16px;
+}
+
+/* ────────────────────────────────────────────
+   PAGE LIST
+──────────────────────────────────────────── */
+.page-list {
+  list-style: none;
+}
+
+.page-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: var(--rule);
+}
+
+.page-row:last-child {
+  border-bottom: var(--rule);
+}
+
+.page-row-left {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.page-num {
+  font-size: 9px;
+  color: var(--ink-faint);
+  min-width: 18px;
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-size: 18px;
+  font-weight: 200;
+  color: var(--ink);
+  text-decoration: none;
+  transition: letter-spacing 0.2s;
+}
+
+.page-title:hover {
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.page-desc {
+  font-size: 9px;
+  color: var(--ink-muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* ────────────────────────────────────────────
+   FOOTER
+──────────────────────────────────────────── */
+.site-footer {
+  padding: 16px var(--space-side);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-footer span {
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.1em;
+}
+
+/* ────────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────────── */
+@media (max-width: 680px) {
+  :root {
+    --space-side: 24px;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .header-right {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .page-body {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: var(--rule);
+    padding: 24px var(--space-side);
+  }
+
+  .main-content {
+    padding: 24px var(--space-side);
+  }
+
+  .page-desc {
+    display: none;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
