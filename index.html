@@ -1,133 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,200&family=Syne+Mono&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah Kruschinski</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,200&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-body {
-  background-color: #EEEBE3;
-  color: #19170F;
-  font-family: 'Syne Mono', monospace;
-  font-size: 13px;
-  margin: 0;
-  padding: 0;
-}
+  <header class="site-header">
+    <p class="label">Portfolio · Digital Health</p>
+    <h1>Sarah<br><em>Kruschinski</em></h1>
+  </header>
 
-a {
-  color: #19170F;
-  text-decoration: none;
-}
+  <nav class="site-nav">
+    <a href="/" class="active">Index</a>
+    <a href="/about/">About</a>
+    <a href="/work/">Work</a>
+    <a href="/contact/">Contact</a>
+  </nav>
 
-a:hover {
-  text-decoration: underline;
-}
+  <main class="site-main">
+    <h2>Registered nurse becoming a technologist.<br>
+    Bridging clinical care and digital systems.</h2>
 
-.label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #19170F88;
-  margin-bottom: 12px;
-}
+    <p class="label">Pages</p>
 
-.site-header {
-  padding: 40px 48px 32px 48px;
-  border-bottom: 1px solid #19170F33;
-}
+    <ul class="page-list">
+      <li>
+        <span class="num">01</span>
+        <a href="/about/">About</a>
+        <small>Background · Vision</small>
+      </li>
+      <li>
+        <span class="num">02</span>
+        <a href="/work/">Work</a>
+        <small>Projects · Process</small>
+      </li>
+      <li>
+        <span class="num">03</span>
+        <a href="/digital-health/">Digital Health</a>
+        <small>Ideas · Research</small>
+      </li>
+      <li>
+        <span class="num">04</span>
+        <a href="/contact/">Contact</a>
+        <small>Get in touch</small>
+      </li>
+    </ul>
+  </main>
 
-.site-header h1 {
-  font-family: 'Fraunces', serif;
-  font-size: 56px;
-  font-weight: 200;
-  line-height: 1;
-  letter-spacing: -2px;
-  margin: 0;
-}
+  <footer class="site-footer">
+    <span>Web Programming · SoSe 2026 · Leuphana</span>
+    <span>sasokru.github.io</span>
+  </footer>
 
-.site-header h1 em {
-  font-style: italic;
-}
-
-.site-nav {
-  padding: 0 48px;
-  border-bottom: 1px solid #19170F33;
-  display: flex;
-  gap: 32px;
-}
-
-.site-nav a {
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #19170F88;
-  text-decoration: none;
-  padding: 14px 0;
-  display: block;
-}
-
-.site-nav a.active {
-  color: #19170F;
-}
-
-.site-main {
-  padding: 36px 48px;
-  max-width: 680px;
-}
-
-.site-main h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 22px;
-  font-weight: 200;
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 32px;
-}
-
-.page-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.page-list li {
-  padding: 13px 0;
-  border-top: 1px solid #19170F22;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.page-list li:last-child {
-  border-bottom: 1px solid #19170F22;
-}
-
-.page-list .num {
-  font-size: 10px;
-  color: #19170F44;
-  margin-right: 16px;
-}
-
-.page-list a {
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  font-weight: 200;
-  color: #19170F;
-  text-decoration: none;
-  flex: 1;
-}
-
-.page-list small {
-  font-size: 9px;
-  color: #19170F66;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.site-footer {
-  padding: 16px 48px;
-  border-top: 1px solid #19170F1A;
-  display: flex;
-  justify-content: space-between;
-}
-
-.site-footer span {
-  font-size: 9px;
-  color: #19170F44;
-  letter-spacing: 1px;
-}
+</body>
+</html>
