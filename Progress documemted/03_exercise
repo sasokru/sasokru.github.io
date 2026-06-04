@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah K. – Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Syne+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f5f0e8;
+            color: #1a1814;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* --- NAV --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #c8bfad;
+        }
+
+        nav .logo {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.85rem;
+            color: #4a4540;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: #4a4540;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        nav a:hover {
+            color: #8b5e3c;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 60px 40px;
+            background-color: #ede6d6;
+            border-bottom: 1px solid #c8bfad;
+            gap: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin: 0 0 16px 0;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+        }
+
+        .hero p {
+            color: #4a4540;
+            max-width: 420px;
+            margin: 0 0 24px 0;
+        }
+
+        .hero-label {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #8b5e3c;
+            margin-bottom: 12px;
+        }
+
+        /* image placeholder */
+        .hero-photo {
+            width: 200px;
+            height: 260px;
+            background-color: #c8bfad;
+            flex-shrink: 0;
+        }
+
+        /* --- TAGS --- */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border: 1px solid #c8bfad;
+            color: #4a4540;
+        }
+
+        /* --- PROJECTS --- */
+        .projects {
+            padding: 60px 40px;
+        }
+
+        .projects h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #4a4540;
+            margin-bottom: 32px;
+        }
+
+        .project-grid {
+            display: flex;
+            gap: 16px;
+        }
+
+        .card {
+            flex: 1;
+            border: 1px solid #c8bfad;
+            position: relative;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd4bc;
+        }
+
+        /* different placeholder colors per card */
+        .card:nth-child(2) .card-image { background-color: #c8c8bc; }
+        .card:nth-child(3) .card-image { background-color: #b8b0a0; }
+
+        /* number badge using position */
+        .card-num {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            background-color: #f5f0e8;
+            padding: 2px 6px;
+            color: #1a1814;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-type {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #8b5e3c;
+            margin-bottom: 6px;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0 0 8px 0;
+        }
+
+        .card p {
+            font-size: 0.88rem;
+            color: #4a4540;
+            margin: 0;
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            display: flex;
+            background-color: #1a1814;
+            color: #f5f0e8;
+            border-top: 1px solid #c8bfad;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 60px 40px;
+            border-right: 1px solid #3a3530;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 em {
+            font-style: italic;
+            color: #c8ad8a;
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: #a09880;
+            max-width: 380px;
+            margin: 0;
+        }
+
+        .about-list {
+            width: 280px;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .about-list p {
+            border-top: 1px solid #3a3530;
+            padding-top: 14px;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .about-list .year {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            color: #8b5e3c;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .about-list .place {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.7rem;
+            color: #605850;
+            display: block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 40px;
+            border-top: 1px solid #c8bfad;
+        }
+
+        footer p {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.7rem;
+            color: #4a4540;
+            margin: 0;
+        }
+
+        footer ul {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer a {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            color: #4a4540;
+        }
+
+        footer a:hover {
+            color: #8b5e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="logo">sasokru.github.io</span>
+        <ul>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <p class="hero-label">Portfolio · Hamburg 2025</p>
+            <h1>Sarah<br><em>Kruschinski</em></h1>
+            <p>Nursing meets code. I study Business Informatics &amp; Digital Media at Leuphana and work as a nurse at UKE — interested in where healthcare and technology overlap.</p>
+            <div class="tags">
+                <span class="tag">Digital Health</span>
+                <span class="tag">Web Dev</span>
+                <span class="tag">Data Viz</span>
+                <span class="tag">UX</span>
+            </div>
+        </div>
+        <div class="hero-photo"></div>
+    </section>
+
+    <section class="projects">
+        <h2>Selected Work</h2>
+        <div class="project-grid">
+
+            <div class="card">
+                <div class="card-image"></div>
+                <span class="card-num">01</span>
+                <div class="card-body">
+                    <p class="card-type">Web · Seminar</p>
+                    <h3>This Portfolio</h3>
+                    <p>Built with HTML &amp; CSS from scratch for the Web Programming seminar at Leuphana.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <span class="card-num">02</span>
+                <div class="card-body">
+                    <p class="card-type">Data · Internship</p>
+                    <h3>Editorial Analytics</h3>
+                    <p>Power BI dashboard tracking content performance across digital channels at stern+.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <span class="card-num">03</span>
+                <div class="card-body">
+                    <p class="card-type">Research · Health</p>
+                    <h3>Heuristics in the ED</h3>
+                    <p>Seminar paper on clinical decision-making and micro-certainty in emergency settings.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-text">
+            <h2>Nurse by night,<br><em>developer</em> by degree.</h2>
+            <p>I'm drawn to systems — whether that's a triage protocol or a data pipeline. Exploring where clinical knowledge and software design can build something genuinely useful.</p>
+        </div>
+        <div class="about-list">
+            <p>
+                <span class="year">2023 – now</span>
+                Nurse · UKE Hamburg
+                <span class="place">Universitätsklinikum</span>
+            </p>
+            <p>
+                <span class="year">2023 – now</span>
+                B.Sc. Business Informatics
+                <span class="place">Leuphana University</span>
+            </p>
+            <p>
+                <span class="year">2024</span>
+                Digital Strategy Intern
+                <span class="place">Stern+, Hamburg</span>
+            </p>
+            <p>
+                <span class="year">2027 (planned)</span>
+                Semester Abroad
+                <span class="place">HKBU, Hong Kong</span>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Sarah Kruschinski</p>
+        <ul>
+            <li><a href="https://github.com/sasokru">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Mail</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
