@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarah K. – Portfolio</title>
+    <title>Sarah Kruschinski</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&family=Syne+Mono&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 
         body {
             margin: 0;
-            background-color: #f5f0e8;
+            background-color: #fafaf8;
             color: #1a1814;
             font-family: 'Fraunces', Georgia, serif;
             font-size: 16px;
@@ -27,19 +27,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            border-bottom: 1px solid #c8bfad;
+            padding: 18px 48px;
+            border-bottom: 1px solid #e0dbd0;
+            background-color: #fafaf8;
         }
 
-        nav .logo {
+        .nav-logo {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.85rem;
-            color: #4a4540;
+            font-size: 0.82rem;
+            color: #1a1814;
+            letter-spacing: 0.05em;
         }
 
         nav ul {
             display: flex;
-            gap: 28px;
+            gap: 32px;
             list-style: none;
             margin: 0;
             padding: 0;
@@ -47,64 +49,83 @@
 
         nav a {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-decoration: none;
-            color: #4a4540;
+            color: #6b6560;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
         nav a:hover {
-            color: #8b5e3c;
+            color: #1a1814;
         }
 
         /* --- HERO --- */
         .hero {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            padding: 60px 40px;
-            background-color: #ede6d6;
-            border-bottom: 1px solid #c8bfad;
-            gap: 40px;
+            align-items: center;
+            padding: 64px 48px;
+            border-bottom: 1px solid #e0dbd0;
+            gap: 48px;
+
+            /* background: subtle off-white, no gradient */
+            background-color: #f4f1eb;
+
+            /* position: so the vertical line can be absolute */
+            position: relative;
+        }
+
+        /* decorative vertical rule between text and photo */
+        .hero-divider {
+            position: absolute;
+            top: 48px;
+            bottom: 48px;
+            left: 50%;
+            width: 1px;
+            background-color: #e0dbd0;
+        }
+
+        .hero-left {
+            flex: 1;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #6b6560;
+            margin-bottom: 14px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 300;
             line-height: 1.1;
-            margin: 0 0 16px 0;
+            margin: 0 0 8px 0;
         }
 
         .hero h1 em {
             font-style: italic;
         }
 
-        .hero p {
-            color: #4a4540;
-            max-width: 420px;
-            margin: 0 0 24px 0;
-        }
-
-        .hero-label {
+        .hero-role {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #8b5e3c;
-            margin-bottom: 12px;
+            font-size: 0.78rem;
+            color: #6b6560;
+            margin: 0 0 20px 0;
+            letter-spacing: 0.06em;
         }
 
-        /* image placeholder */
-        .hero-photo {
-            width: 200px;
-            height: 260px;
-            background-color: #c8bfad;
-            flex-shrink: 0;
+        .hero-bio {
+            font-size: 0.95rem;
+            color: #4a4540;
+            max-width: 400px;
+            margin: 0 0 28px 0;
         }
 
-        /* --- TAGS --- */
-        .tags {
+        .hero-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -112,63 +133,108 @@
 
         .tag {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            padding: 4px 12px;
-            border: 1px solid #c8bfad;
-            color: #4a4540;
+            padding: 4px 10px;
+            border: 1px solid #c8c0b0;
+            color: #6b6560;
+            background-color: #fafaf8;
+        }
+
+        .hero-right {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 240px;
+            background-color: #ddd8cc;
+        }
+
+        .hero-photo-label {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            color: #9b9590;
+            letter-spacing: 0.08em;
+        }
+
+        /* --- SECTION HEADER --- */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .section-header h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #6b6560;
+            margin: 0;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background-color: #e0dbd0;
         }
 
         /* --- PROJECTS --- */
         .projects {
-            padding: 60px 40px;
-        }
-
-        .projects h2 {
-            font-family: 'Syne Mono', monospace;
-            font-size: 0.8rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #4a4540;
-            margin-bottom: 32px;
+            padding: 52px 48px;
+            border-bottom: 1px solid #e0dbd0;
         }
 
         .project-grid {
             display: flex;
-            gap: 16px;
+            gap: 1px;
+            background-color: #e0dbd0; /* gap color via background trick */
         }
 
         .card {
             flex: 1;
-            border: 1px solid #c8bfad;
+            background-color: #fafaf8;
             position: relative;
         }
 
         .card-image {
             width: 100%;
             height: 160px;
-            background-color: #ddd4bc;
+            background-color: #ede8de;
         }
 
-        /* different placeholder colors per card */
-        .card:nth-child(2) .card-image { background-color: #c8c8bc; }
-        .card:nth-child(3) .card-image { background-color: #b8b0a0; }
+        .card:nth-child(2) .card-image {
+            background-color: #e0ddd5;
+        }
 
-        /* number badge using position */
+        .card:nth-child(3) .card-image {
+            background-color: #d4d0c8;
+        }
+
+        /* number — uses position */
         .card-num {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 12px;
             font-family: 'Syne Mono', monospace;
             font-size: 0.65rem;
-            background-color: #f5f0e8;
+            background-color: #fafaf8;
             padding: 2px 6px;
-            color: #1a1814;
+            color: #6b6560;
+            letter-spacing: 0.08em;
         }
 
         .card-body {
-            padding: 20px;
+            padding: 20px 20px 24px;
         }
 
         .card-type {
@@ -176,84 +242,156 @@
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            color: #8b5e3c;
+            color: #9b9590;
             margin-bottom: 6px;
         }
 
         .card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 400;
             margin: 0 0 8px 0;
         }
 
         .card p {
-            font-size: 0.88rem;
-            color: #4a4540;
+            font-size: 0.85rem;
+            color: #6b6560;
             margin: 0;
+            line-height: 1.5;
         }
 
         /* --- ABOUT --- */
         .about {
             display: flex;
-            background-color: #1a1814;
-            color: #f5f0e8;
-            border-top: 1px solid #c8bfad;
+            border-bottom: 1px solid #e0dbd0;
         }
 
         .about-text {
             flex: 1;
-            padding: 60px 40px;
-            border-right: 1px solid #3a3530;
+            padding: 52px 48px;
+            border-right: 1px solid #e0dbd0;
         }
 
         .about-text h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            line-height: 1.25;
+            margin: 0 0 16px 0;
         }
 
         .about-text h2 em {
             font-style: italic;
-            color: #c8ad8a;
         }
 
         .about-text p {
-            font-size: 0.95rem;
-            color: #a09880;
-            max-width: 380px;
+            font-size: 0.92rem;
+            color: #4a4540;
+            max-width: 400px;
             margin: 0;
         }
 
-        .about-list {
+        .about-cv {
             width: 280px;
-            padding: 60px 40px;
+            flex-shrink: 0;
+            padding: 52px 36px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
         }
 
-        .about-list p {
-            border-top: 1px solid #3a3530;
+        .cv-item {
+            border-top: 1px solid #e0dbd0;
             padding-top: 14px;
-            font-size: 0.9rem;
-            margin: 0;
         }
 
-        .about-list .year {
+        .cv-year {
             font-family: 'Syne Mono', monospace;
             font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            color: #8b5e3c;
-            display: block;
+            letter-spacing: 0.1em;
+            color: #9b9590;
+            margin-bottom: 3px;
+        }
+
+        .cv-role {
+            font-size: 0.9rem;
             margin-bottom: 2px;
         }
 
-        .about-list .place {
+        .cv-place {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.7rem;
-            color: #605850;
-            display: block;
+            font-size: 0.68rem;
+            color: #9b9590;
+            letter-spacing: 0.06em;
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            padding: 52px 48px;
+            border-bottom: 1px solid #e0dbd0;
+
+            /* background: slightly different tone to separate */
+            background-color: #f4f1eb;
+
+            /* position: so annotation can sit absolute */
+            position: relative;
+        }
+
+        .contact-inner {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 48px;
+        }
+
+        .contact h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+        }
+
+        .contact p {
+            font-size: 0.88rem;
+            color: #6b6560;
+            margin: 0;
+            max-width: 300px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 4px;
+        }
+
+        .contact-links a {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: #1a1814;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-links a::before {
+            content: "→";
+            color: #9b9590;
+        }
+
+        .contact-links a:hover {
+            color: #6b6560;
+        }
+
+        /* small annotation text — uses position */
+        .contact-note {
+            position: absolute;
+            bottom: 20px;
+            right: 48px;
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            color: #c0bab0;
+            letter-spacing: 0.08em;
         }
 
         /* --- FOOTER --- */
@@ -261,15 +399,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 40px;
-            border-top: 1px solid #c8bfad;
+            padding: 20px 48px;
         }
 
         footer p {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.7rem;
-            color: #4a4540;
+            font-size: 0.68rem;
+            color: #9b9590;
             margin: 0;
+            letter-spacing: 0.06em;
         }
 
         footer ul {
@@ -282,22 +420,22 @@
 
         footer a {
             font-family: 'Syne Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             text-decoration: none;
-            color: #4a4540;
+            color: #9b9590;
         }
 
         footer a:hover {
-            color: #8b5e3c;
+            color: #1a1814;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <span class="logo">sasokru.github.io</span>
+        <span class="nav-logo">Sarah Kruschinski</span>
         <ul>
             <li><a href="#">Work</a></li>
             <li><a href="#">About</a></li>
@@ -306,31 +444,44 @@
     </nav>
 
     <section class="hero">
-        <div>
-            <p class="hero-label">Portfolio · Hamburg 2025</p>
+        <div class="hero-divider"></div>
+
+        <div class="hero-left">
+            <p class="hero-eyebrow">Portfolio · Hamburg</p>
             <h1>Sarah<br><em>Kruschinski</em></h1>
-            <p>Nursing meets code. I study Business Informatics &amp; Digital Media at Leuphana and work as a nurse at UKE. Interested in where healthcare and technology overlap.</p>
-            <div class="tags">
+            <p class="hero-role">B.A. Digital Media · B.Sc. Business Informatics · UKE</p>
+            <p class="hero-bio">
+                Studying Digital Media and Business Informatics at Leuphana since 2024, 
+                working as a nurse at UKE on the side. Interested in digital health.
+            </p>
+            <div class="hero-tags">
                 <span class="tag">Digital Health</span>
                 <span class="tag">Web Dev</span>
                 <span class="tag">Data Viz</span>
-                <span class="tag">UX</span>
+                <span class="tag">UX Research</span>
             </div>
         </div>
-        <div class="hero-photo"></div>
+
+        <div class="hero-right">
+            <div class="hero-photo"></div>
+            <span class="hero-photo-label">[ photo ]</span>
+        </div>
     </section>
 
     <section class="projects">
-        <h2>Selected Work</h2>
-        <div class="project-grid">
+        <div class="section-header">
+            <h2>Selected Work</h2>
+            <div class="section-rule"></div>
+        </div>
 
+        <div class="project-grid">
             <div class="card">
                 <div class="card-image"></div>
                 <span class="card-num">01</span>
                 <div class="card-body">
-                    <p class="card-type">Web · Seminar</p>
+                    <p class="card-type">Web · SS26 Seminar</p>
                     <h3>This Portfolio</h3>
-                    <p>Built with HTML &amp; CSS from scratch for the Web Programming seminar at Leuphana.</p>
+                    <p>Built from scratch with HTML and CSS for the Web Programming seminar at Leuphana.</p>
                 </div>
             </div>
 
@@ -348,42 +499,69 @@
                 <div class="card-image"></div>
                 <span class="card-num">03</span>
                 <div class="card-body">
-                    <p class="card-type">Research · Health</p>
+                    <p class="card-type">Research · Digital Health</p>
                     <h3>Heuristics in the ED</h3>
-                    <p>Seminar paper on clinical decision-making and micro-certainty in emergency settings.</p>
+                    <p>Seminar paper on clinical decision-making and the micro-certainty / macro-uncertainty phenomenon.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="about">
         <div class="about-text">
+            <div class="section-header">
+                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">About</h2>
+                <div class="section-rule"></div>
+            </div>
             <h2>Nurse by night,<br><em>developer</em> by degree.</h2>
-            <p>I'm drawn to systems, whether that's a triage protocol or a data pipeline. Exploring where clinical knowledge and software design can build something genuinely useful.</p>
+            <p>I work in nursing and study informatics at the same time, which means I spend a lot of time thinking about how healthcare and software could fit together better.</p>
         </div>
-        <div class="about-list">
-            <p>
-                <span class="year">2023 – now</span>
-                Nurse · UKE Hamburg
-                <span class="place">Universitätsklinikum</span>
-            </p>
-            <p>
-                <span class="year">2023 – now</span>
-                B.Sc. Business Informatics, B.A. Digital Media
-                <span class="place">Leuphana University</span>
-            </p>
-            <p>
-                <span class="year">2024</span>
-                Digital Strategy Intern
-                <span class="place">Stern+, Hamburg</span>
-            </p>
-            <p>
-                <span class="year">2027 (planned)</span>
-                Semester Abroad
-                <span class="place">HKBU, Hong Kong</span>
-            </p>
+
+        <div class="about-cv">
+            <div class="section-header" style="margin-bottom:24px;">
+                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0;">CV</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="cv-item">
+                <p class="cv-year">2023 – present</p>
+                <p class="cv-role">Nurse</p>
+                <p class="cv-place">UKE Hamburg</p>
+            </div>
+            <div class="cv-item">
+                <p class="cv-year">2024 – present</p>
+                <p class="cv-role">B.A. Digital Media · B.Sc. Business Informatics</p>
+                <p class="cv-place">Leuphana University</p>
+            </div>
+            <div class="cv-item">
+                <p class="cv-year">2024</p>
+                <p class="cv-role">Digital Strategy Intern</p>
+                <p class="cv-place">Stern+, Hamburg</p>
+            </div>
+            <div class="cv-item">
+                <p class="cv-year">2027 (planned)</p>
+                <p class="cv-role">Semester Abroad</p>
+                <p class="cv-place">HKBU Hong Kong</p>
+            </div>
         </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-inner">
+            <div>
+                <div class="section-header">
+                    <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">Contact</h2>
+                    <div class="section-rule"></div>
+                </div>
+                <h2>Get in touch.</h2>
+                <p>Feel free to reach out about internships, projects, or anything Digital Health.</p>
+            </div>
+            <div class="contact-links">
+                <a href="https://github.com/sasokru" target="_blank">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Email</a>
+            </div>
+        </div>
+        <span class="contact-note">Hamburg, 2025</span>
     </section>
 
     <footer>
