@@ -13,6 +13,11 @@
             box-sizing: border-box;
         }
 
+        /* interaction 1: smooth scroll (CSS) */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             background-color: #fafaf8;
@@ -22,7 +27,7 @@
             line-height: 1.6;
         }
 
-    
+        /* --- NAV --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -30,6 +35,9 @@
             padding: 18px 48px;
             border-bottom: 1px solid #e0dbd0;
             background-color: #fafaf8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .nav-logo {
@@ -47,6 +55,7 @@
             padding: 0;
         }
 
+        /* interaction 2: nav link hover (CSS) */
         nav a {
             font-family: 'Syne Mono', monospace;
             font-size: 0.75rem;
@@ -58,6 +67,8 @@
 
         nav a:hover {
             color: #1a1814;
+            text-decoration: underline;
+            text-underline-offset: 4px;
         }
 
         /* --- HERO --- */
@@ -68,10 +79,7 @@
             padding: 64px 48px;
             border-bottom: 1px solid #e0dbd0;
             gap: 48px;
-
-            
             background-color: #f4f1eb;
-
             position: relative;
         }
 
@@ -84,9 +92,7 @@
             background-color: #e0dbd0;
         }
 
-        .hero-left {
-            flex: 1;
-        }
+        .hero-left { flex: 1; }
 
         .hero-eyebrow {
             font-family: 'Syne Mono', monospace;
@@ -104,9 +110,7 @@
             margin: 0 0 8px 0;
         }
 
-        .hero h1 em {
-            font-style: italic;
-        }
+        .hero h1 em { font-style: italic; }
 
         .hero-role {
             font-family: 'Syne Mono', monospace;
@@ -161,6 +165,7 @@
             letter-spacing: 0.08em;
         }
 
+        /* --- SECTION HEADER --- */
         .section-header {
             display: flex;
             align-items: center;
@@ -185,6 +190,7 @@
             background-color: #e0dbd0;
         }
 
+        /* --- PROJECTS --- */
         .projects {
             padding: 52px 48px;
             border-bottom: 1px solid #e0dbd0;
@@ -193,13 +199,19 @@
         .project-grid {
             display: flex;
             gap: 1px;
-            background-color: #e0dbd0; /* gap color via background trick */
+            background-color: #e0dbd0;
         }
 
+        /* interaction 3: card hover (CSS) */
         .card {
             flex: 1;
             background-color: #fafaf8;
             position: relative;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background-color: #f4f1eb;
         }
 
         .card-image {
@@ -208,13 +220,8 @@
             background-color: #ede8de;
         }
 
-        .card:nth-child(2) .card-image {
-            background-color: #e0ddd5;
-        }
-
-        .card:nth-child(3) .card-image {
-            background-color: #d4d0c8;
-        }
+        .card:nth-child(2) .card-image { background-color: #e0ddd5; }
+        .card:nth-child(3) .card-image { background-color: #d4d0c8; }
 
         .card-num {
             position: absolute;
@@ -228,9 +235,7 @@
             letter-spacing: 0.08em;
         }
 
-        .card-body {
-            padding: 20px 20px 24px;
-        }
+        .card-body { padding: 20px 20px 24px; }
 
         .card-type {
             font-family: 'Syne Mono', monospace;
@@ -254,6 +259,7 @@
             line-height: 1.5;
         }
 
+        /* --- ABOUT --- */
         .about {
             display: flex;
             border-bottom: 1px solid #e0dbd0;
@@ -272,9 +278,7 @@
             margin: 0 0 16px 0;
         }
 
-        .about-text h2 em {
-            font-style: italic;
-        }
+        .about-text h2 em { font-style: italic; }
 
         .about-text p {
             font-size: 0.92rem;
@@ -305,10 +309,7 @@
             margin-bottom: 3px;
         }
 
-        .cv-role {
-            font-size: 0.9rem;
-            margin-bottom: 2px;
-        }
+        .cv-role { font-size: 0.9rem; margin-bottom: 2px; }
 
         .cv-place {
             font-family: 'Syne Mono', monospace;
@@ -317,12 +318,11 @@
             letter-spacing: 0.06em;
         }
 
+        /* --- CONTACT --- */
         .contact {
             padding: 52px 48px;
             border-bottom: 1px solid #e0dbd0;
-
             background-color: #f4f1eb;
-
             position: relative;
         }
 
@@ -365,13 +365,26 @@
             gap: 8px;
         }
 
-        .contact-links a::before {
-            content: "→";
-            color: #9b9590;
+        .contact-links a::before { content: "→"; color: #9b9590; }
+        .contact-links a:hover { color: #6b6560; }
+
+        /* copy button */
+        .copy-btn {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: none;
+            border: 1px solid #c8c0b0;
+            padding: 6px 14px;
+            cursor: pointer;
+            color: #1a1814;
+            margin-top: 4px;
         }
 
-        .contact-links a:hover {
-            color: #6b6560;
+        .copy-btn:hover {
+            background-color: #1a1814;
+            color: #fafaf8;
         }
 
         .contact-note {
@@ -384,6 +397,7 @@
             letter-spacing: 0.08em;
         }
 
+        /* --- FOOTER --- */
         footer {
             display: flex;
             justify-content: space-between;
@@ -396,7 +410,6 @@
             font-size: 0.68rem;
             color: #9b9590;
             margin: 0;
-            letter-spacing: 0.06em;
         }
 
         footer ul {
@@ -416,57 +429,64 @@
             color: #9b9590;
         }
 
-        footer a:hover {
-            color: #1a1814;
-        }
+        footer a:hover { color: #1a1814; }
     </style>
 </head>
 <body>
-
+   
     <nav>
         <span class="nav-logo">Sarah Kruschinski</span>
         <ul>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-divider"></div>
-
         <div class="hero-left">
             <p class="hero-eyebrow">Portfolio · Hamburg</p>
             <h1>Sarah<br><em>Kruschinski</em></h1>
-            <p class="hero-role">B.A. Digital Media · B.Sc. Business Informatics · UKE</p>
+            <p class="hero-role">Nurse · B.A. Digital Media · B.Sc. Business Informatics</p>
             <p class="hero-bio">
-                Studying Digital Media / Business administartion and Business Informatics at Leuphana since 2024, 
-                working as a nurse at UKE. Interested in digital health.
+                I work as a nurse at UKE and study at Leuphana since 2024.
+                My goal is to move into IT management in healthcare —
+                building systems that actually work for the people using them.
             </p>
             <div class="hero-tags">
                 <span class="tag">Digital Health</span>
+                <span class="tag">IT Management</span>
                 <span class="tag">Web Dev</span>
-                <span class="tag">Data Viz</span>
-                <span class="tag">UX Research</span>
+                <span class="tag">Clinical Practice</span>
             </div>
         </div>
-
         <div class="hero-right">
             <div class="hero-photo"></div>
             <span class="hero-photo-label">[ photo ]</span>
         </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="work">
         <div class="section-header">
             <h2>Selected Work</h2>
             <div class="section-rule"></div>
         </div>
-
         <div class="project-grid">
+
             <div class="card">
                 <div class="card-image"></div>
                 <span class="card-num">01</span>
+                <div class="card-body">
+                    <p class="card-type">Hardware · TechBasics 2</p>
+                    <h3>drip.py</h3>
+                    <p>Arduino infusion drop sensor built with an IR beam and OLED display. Measures drop rate in real time and signals status via RGB LED — designed from a clinical perspective.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <span class="card-num">02</span>
                 <div class="card-body">
                     <p class="card-type">Web · SS26 Seminar</p>
                     <h3>This Portfolio</h3>
@@ -476,39 +496,29 @@
 
             <div class="card">
                 <div class="card-image"></div>
-                <span class="card-num">02</span>
+                <span class="card-num">03</span>
                 <div class="card-body">
-                    <p class="card-type">Data · Internship</p>
-                    <h3>Editorial Analytics</h3>
-                    <p>Power BI dashboard tracking content performance across digital channels at stern+.</p>
+                    <p class="card-type">Research · Clinical</p>
+                    <h3>Heuristics in the ED</h3>
+                    <p>Seminar paper on overconfidence in clinical decision-making — how fast thinking helps and where it fails in emergency settings.</p>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-image"></div>
-                <span class="card-num">03</span>
-                <div class="card-body">
-                    <p class="card-type">Project · Digital Health</p>
-                    <h3>Drip.py</h3>
-                    <p> Arduino based drip monitor for infusions at the hospital, programmed with C++ and python.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-text">
             <div class="section-header">
-                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">About</h2>
+                <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;white-space:nowrap;">About</h2>
                 <div class="section-rule"></div>
             </div>
-            <h2>Nurse by night, student by day.</h2>
-            <p>As I spend a lot of time at the hospital and at Uni, I like thinking about how healthcare and software could fit together better and finding solutions.</p>
+            <h2>Clinical background,<br><em>technical direction.</em></h2>
+            <p>I've worked in nursing long enough to know where hospital software lets people down. Studying informatics is how I'm learning to do something about it. Long term I'm aiming for IT management in healthcare — hospital systems, digital infrastructure, procurement.</p>
         </div>
-
         <div class="about-cv">
             <div class="section-header" style="margin-bottom:24px;">
-                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0;">CV</h2>
+                <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;">CV</h2>
                 <div class="section-rule"></div>
             </div>
             <div class="cv-item">
@@ -519,12 +529,12 @@
             <div class="cv-item">
                 <p class="cv-year">2024 – present</p>
                 <p class="cv-role">B.A. Digital Media · B.Sc. Business Informatics</p>
-                <p class="cv-place">Leuphana University</p>
+                <p class="cv-place">Leuphana University · Minor: BWL</p>
             </div>
             <div class="cv-item">
-                <p class="cv-year">2024</p>
-                <p class="cv-role">Digital Strategy Intern</p>
-                <p class="cv-place">Stern+, Hamburg</p>
+                <p class="cv-year">next step</p>
+                <p class="cv-role">M.Sc. Digital Health</p>
+                <p class="cv-place">TBD — after semester abroad</p>
             </div>
             <div class="cv-item">
                 <p class="cv-year">2027 (planned)</p>
@@ -534,20 +544,20 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="contact-inner">
             <div>
                 <div class="section-header">
-                    <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">Contact</h2>
+                    <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;white-space:nowrap;">Contact</h2>
                     <div class="section-rule"></div>
                 </div>
                 <h2>Get in touch.</h2>
-                <p>Feel free to reach out about internships, projects, or anything Digital Health.</p>
+                <p>Open to internships and projects in digital health, healthcare IT, or anything in between.</p>
             </div>
             <div class="contact-links">
                 <a href="https://github.com/sasokru" target="_blank">GitHub</a>
                 <a href="#">LinkedIn</a>
-                <a href="#">Email</a>
+                <button class="copy-btn" onclick="copyEmail()">Copy Email</button>
             </div>
         </div>
         <span class="contact-note">Hamburg, 2025</span>
@@ -558,9 +568,23 @@
         <ul>
             <li><a href="https://github.com/sasokru">GitHub</a></li>
             <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Mail</a></li>
         </ul>
     </footer>
+
+    <script>
+        
+        function copyEmail() {
+            var email = "sarah.s.kruschinski@stud.leuphana.de"; // 
+            var btn = document.querySelector(".copy-btn");
+
+            navigator.clipboard.writeText(email).then(function() {
+                btn.textContent = "Copied!";
+                setTimeout(function() {
+                    btn.textContent = "Copy Email";
+                }, 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>
