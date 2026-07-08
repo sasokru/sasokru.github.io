@@ -13,7 +13,6 @@
             box-sizing: border-box;
         }
 
-        /* interaction 1: smooth scroll (CSS) */
         html {
             scroll-behavior: smooth;
         }
@@ -25,6 +24,11 @@
             font-family: 'Fraunces', Georgia, serif;
             font-size: 16px;
             line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
         }
 
         /* --- NAV --- */
@@ -49,13 +53,12 @@
 
         nav ul {
             display: flex;
-            gap: 32px;
+            gap: 28px;
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        /* interaction 2: nav link hover (CSS) */
         nav a {
             font-family: 'Syne Mono', monospace;
             font-size: 0.75rem;
@@ -202,12 +205,10 @@
             background-color: #e0dbd0;
         }
 
-        /* interaction 3: card hover (CSS) */
         .card {
             flex: 1;
             background-color: #fafaf8;
             position: relative;
-            cursor: pointer;
         }
 
         .card:hover {
@@ -218,10 +219,8 @@
             width: 100%;
             height: 160px;
             background-color: #ede8de;
+            object-fit: cover;
         }
-
-        .card:nth-child(2) .card-image { background-color: #e0ddd5; }
-        .card:nth-child(3) .card-image { background-color: #d4d0c8; }
 
         .card-num {
             position: absolute;
@@ -259,6 +258,160 @@
             line-height: 1.5;
         }
 
+        /* --- DRIP.PY FEATURE --- */
+        .drip {
+            padding: 52px 48px;
+            border-bottom: 1px solid #e0dbd0;
+            background-color: #f4f1eb;
+        }
+
+        .drip-top {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: stretch;
+        }
+
+        .drip-photo {
+            width: 300px;
+            flex-shrink: 0;
+            background-color: #ddd8cc;
+            object-fit: cover;
+            border: 1px solid #e0dbd0;
+        }
+
+        .drip-intro { flex: 1; }
+
+        .drip-intro h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin: 0 0 6px 0;
+        }
+
+        .drip-intro h3 em { font-style: italic; }
+
+        .drip-sub {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #9b9590;
+            margin: 0 0 18px 0;
+        }
+
+        .drip-intro p {
+            font-size: 0.92rem;
+            color: #4a4540;
+            max-width: 460px;
+            margin: 0 0 16px 0;
+        }
+
+        /* status legend */
+        .drip-states {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .state-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            color: #4a4540;
+            background-color: #fafaf8;
+            border: 1px solid #e0dbd0;
+            padding: 5px 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .dot-red   { background-color: #d1493f; }
+        .dot-green { background-color: #4a9c5d; }
+        .dot-blue  { background-color: #4478b0; }
+
+        /* two-column spec + gallery */
+        .drip-specs {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .spec-block { flex: 1; }
+
+        .spec-block h4 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6b6560;
+            margin: 0 0 14px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0dbd0;
+            font-weight: 400;
+        }
+
+        .spec-block ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .spec-block li {
+            font-size: 0.85rem;
+            color: #4a4540;
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .spec-block li span {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.7rem;
+            color: #9b9590;
+            text-align: right;
+        }
+
+        /* image gallery */
+        .drip-gallery {
+            display: flex;
+            gap: 16px;
+        }
+
+        .gallery-item {
+            flex: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 1px solid #e0dbd0;
+            background-color: #fff;
+        }
+
+        .gallery-item.contain img {
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .gallery-caption {
+            font-family: 'Syne Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.05em;
+            color: #9b9590;
+            margin-top: 8px;
+        }
+
         /* --- ABOUT --- */
         .about {
             display: flex;
@@ -288,7 +441,7 @@
         }
 
         .about-cv {
-            width: 280px;
+            width: 300px;
             flex-shrink: 0;
             padding: 52px 36px;
             display: flex;
@@ -368,7 +521,6 @@
         .contact-links a::before { content: "→"; color: #9b9590; }
         .contact-links a:hover { color: #6b6560; }
 
-        /* copy button */
         .copy-btn {
             font-family: 'Syne Mono', monospace;
             font-size: 0.78rem;
@@ -410,6 +562,7 @@
             font-size: 0.68rem;
             color: #9b9590;
             margin: 0;
+            letter-spacing: 0.06em;
         }
 
         footer ul {
@@ -430,14 +583,61 @@
         }
 
         footer a:hover { color: #1a1814; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 720px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px 24px;
+            }
+            nav ul { gap: 18px; }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 24px;
+                gap: 32px;
+            }
+            .hero-divider { display: none; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero-right { align-items: flex-start; }
+
+            .projects, .drip, .contact { padding: 40px 24px; }
+
+            .project-grid { flex-direction: column; }
+
+            .drip-top { flex-direction: column; }
+            .drip-photo { width: 100%; height: 260px; }
+            .drip-specs { flex-direction: column; gap: 24px; }
+            .drip-gallery { flex-direction: column; }
+
+            .about { flex-direction: column; }
+            .about-text { border-right: none; border-bottom: 1px solid #e0dbd0; padding: 40px 24px; }
+            .about-cv { width: 100%; padding: 40px 24px; }
+
+            .contact-inner { flex-direction: column; gap: 28px; }
+            .contact-note { display: none; }
+
+            footer { flex-direction: column; gap: 12px; padding: 24px; }
+        }
     </style>
 </head>
 <body>
-   
+
+    <!--
+    INTERACTIONS
+    1. Smooth scroll  - click any nav link (Work / drip.py / About / Contact)
+    2. Nav hover      - underline appears on hover
+    3. Card hover     - project cards change background on hover
+    4. Copy email     - button in the contact section copies the address
+    -->
+
     <nav>
         <span class="nav-logo">Sarah Kruschinski</span>
         <ul>
             <li><a href="#work">Work</a></li>
+            <li><a href="#drip">drip.py</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -445,22 +645,23 @@
 
     <section class="hero" id="home">
         <div class="hero-divider"></div>
+
         <div class="hero-left">
             <p class="hero-eyebrow">Portfolio · Hamburg</p>
             <h1>Sarah<br><em>Kruschinski</em></h1>
-            <p class="hero-role">Nurse · B.A. Digital Media · B.Sc. Business Informatics</p>
+            <p class="hero-role">B.A. Digital Media · B.Sc. Business Informatics · UKE</p>
             <p class="hero-bio">
-                I work as a nurse at UKE and study at Leuphana since 2024.
-                My goal is to move into IT management in healthcare —
-                building systems that actually work for the people using them.
+                Studying Digital Media / Business Administration and Business Informatics
+                at Leuphana since 2024, working as a nurse at UKE. Interested in digital health.
             </p>
             <div class="hero-tags">
                 <span class="tag">Digital Health</span>
-                <span class="tag">IT Management</span>
                 <span class="tag">Web Dev</span>
-                <span class="tag">Clinical Practice</span>
+                <span class="tag">Data Viz</span>
+                <span class="tag">UX Research</span>
             </div>
         </div>
+
         <div class="hero-right">
             <div class="hero-photo"></div>
             <span class="hero-photo-label">[ photo ]</span>
@@ -472,20 +673,20 @@
             <h2>Selected Work</h2>
             <div class="section-rule"></div>
         </div>
-        <div class="project-grid">
 
+        <div class="project-grid">
             <div class="card">
-                <div class="card-image"></div>
+                <img class="card-image" src="images/drip_prototype.jpeg" alt="drip.py prototype on an infusion stand">
                 <span class="card-num">01</span>
                 <div class="card-body">
-                    <p class="card-type">Hardware · TechBasics 2</p>
+                    <p class="card-type">Project · Digital Health</p>
                     <h3>drip.py</h3>
-                    <p>Arduino infusion drop sensor built with an IR beam and OLED display. Measures drop rate in real time and signals status via RGB LED — designed from a clinical perspective.</p>
+                    <p>Arduino-based infusion drip monitor with an IR sensor, OLED display, and Kalman-filtered flow estimation. My final project — more below.</p>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-image"></div>
+                <img class="card-image" src="images/drip_schematic.png" alt="Circuit schematic">
                 <span class="card-num">02</span>
                 <div class="card-body">
                     <p class="card-type">Web · SS26 Seminar</p>
@@ -495,30 +696,93 @@
             </div>
 
             <div class="card">
-                <div class="card-image"></div>
+                <img class="card-image" src="images/drip_kalman.jpeg" alt="Kalman filter plot">
                 <span class="card-num">03</span>
                 <div class="card-body">
-                    <p class="card-type">Research · Clinical</p>
-                    <h3>Heuristics in the ED</h3>
-                    <p>Seminar paper on overconfidence in clinical decision-making — how fast thinking helps and where it fails in emergency settings.</p>
+                    <p class="card-type">Data · Internship</p>
+                    <h3>Editorial Analytics</h3>
+                    <p>Power BI dashboard tracking content performance across digital channels at stern+.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section class="drip" id="drip">
+        <div class="section-header">
+            <h2>Featured · drip.py</h2>
+            <div class="section-rule"></div>
+        </div>
+
+        <div class="drip-top">
+            <img class="drip-photo" src="images/drip_prototype.jpeg" alt="The drip.py prototype mounted on an infusion stand">
+            <div class="drip-intro">
+                <h3>An <em>infusion drip monitor</em></h3>
+                <p class="drip-sub">Arduino · C++ · MATLAB · Digital Health</p>
+                <p>
+                    drip.py measures the flow of a gravity infusion without touching the fluid.
+                    An infrared beam sits across the drip chamber; every falling drop breaks the beam,
+                    and the Arduino counts these interruptions to calculate the drop rate and convert
+                    it into millilitres per minute.
+                </p>
+                <p>
+                    The live rate is shown on an OLED display, and an RGB LED gives an at-a-glance
+                    status. The idea comes straight from bedside nursing, where drop rates are still
+                    counted by eye and a wristwatch.
+                </p>
+                <div class="drip-states">
+                    <span class="state-chip"><span class="dot dot-red"></span> LOW &lt; 0.67 mL/min</span>
+                    <span class="state-chip"><span class="dot dot-green"></span> OK 0.67–2.0</span>
+                    <span class="state-chip"><span class="dot dot-blue"></span> FAST &gt; 2.0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="drip-specs">
+            <div class="spec-block">
+                <h4>Hardware</h4>
+                <ul>
+                    <li>Microcontroller <span>Arduino Uno</span></li>
+                    <li>Drop detection <span>IR break-beam sensor</span></li>
+                    <li>Display <span>SSD1306 OLED (I²C)</span></li>
+                    <li>Status signal <span>RGB LED</span></li>
+                </ul>
+            </div>
+            <div class="spec-block">
+                <h4>Software</h4>
+                <ul>
+                    <li>Firmware <span>C++ (Arduino IDE)</span></li>
+                    <li>Display library <span>U8g2</span></li>
+                    <li>On-device smoothing <span>Exponential moving average</span></li>
+                    <li>State estimation <span>Kalman filter (MATLAB)</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="drip-gallery">
+            <div class="gallery-item contain">
+                <img src="images/drip_schematic.png" alt="Fritzing circuit schematic">
+                <p class="gallery-caption">Circuit schematic (Fritzing)</p>
+            </div>
+            <div class="gallery-item contain">
+                <img src="images/drip_kalman.jpeg" alt="MATLAB Kalman filter simulation plot">
+                <p class="gallery-caption">Kalman filter: true vs measured vs estimated</p>
+            </div>
         </div>
     </section>
 
     <section class="about" id="about">
         <div class="about-text">
             <div class="section-header">
-                <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;white-space:nowrap;">About</h2>
+                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">About</h2>
                 <div class="section-rule"></div>
             </div>
-            <h2>Clinical background,<br><em>technical direction.</em></h2>
-            <p>I've worked in nursing long enough to know where hospital software lets people down. Studying informatics is how I'm learning to do something about it. Long term I'm aiming for IT management in healthcare — hospital systems, digital infrastructure, procurement.</p>
+            <h2>Nurse by night, student by day.</h2>
+            <p>As I spend a lot of time at the hospital and at Uni, I like thinking about how healthcare and software could fit together better and finding solutions.</p>
         </div>
+
         <div class="about-cv">
             <div class="section-header" style="margin-bottom:24px;">
-                <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;">CV</h2>
+                <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0;">CV</h2>
                 <div class="section-rule"></div>
             </div>
             <div class="cv-item">
@@ -532,9 +796,9 @@
                 <p class="cv-place">Leuphana University · Minor: BWL</p>
             </div>
             <div class="cv-item">
-                <p class="cv-year">next step</p>
-                <p class="cv-role">M.Sc. Digital Health</p>
-                <p class="cv-place">TBD — after semester abroad</p>
+                <p class="cv-year">2024</p>
+                <p class="cv-role">Digital Strategy Intern</p>
+                <p class="cv-place">Stern+, Hamburg</p>
             </div>
             <div class="cv-item">
                 <p class="cv-year">2027 (planned)</p>
@@ -548,11 +812,11 @@
         <div class="contact-inner">
             <div>
                 <div class="section-header">
-                    <h2 style="font-family:'Syne Mono',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#6b6560;font-weight:400;margin:0;white-space:nowrap;">Contact</h2>
+                    <h2 style="font-family:'Syne Mono',monospace; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:#6b6560; font-weight:400; margin:0; white-space:nowrap;">Contact</h2>
                     <div class="section-rule"></div>
                 </div>
                 <h2>Get in touch.</h2>
-                <p>Open to internships and projects in digital health, healthcare IT, or anything in between.</p>
+                <p>Feel free to reach out about internships, projects, or anything Digital Health.</p>
             </div>
             <div class="contact-links">
                 <a href="https://github.com/sasokru" target="_blank">GitHub</a>
@@ -568,20 +832,18 @@
         <ul>
             <li><a href="https://github.com/sasokru">GitHub</a></li>
             <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Mail</a></li>
         </ul>
     </footer>
 
     <script>
-        
+        // interaction 4: copy email to clipboard
         function copyEmail() {
-            var email = "sarah.s.kruschinski@stud.leuphana.de"; // 
+            var email = "Sarah.S.Kruschinski@stud.leuphana.de";
             var btn = document.querySelector(".copy-btn");
-
             navigator.clipboard.writeText(email).then(function() {
                 btn.textContent = "Copied!";
-                setTimeout(function() {
-                    btn.textContent = "Copy Email";
-                }, 2000);
+                setTimeout(function() { btn.textContent = "Copy Email"; }, 2000);
             });
         }
     </script>
