@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>drip.py — Sarah Kruschinski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+        <a href="index.html" class="brand">Sarah Kruschinski</a>
+        <nav class="nav">
+            <a href="index.html">About</a>
+            <a href="drip.html" class="current">drip.py</a>
+            <a href="essay.html">Writing</a>
+            <a href="news.html">Digital Health</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="wrap hero" style="padding-bottom:48px;">
+        <p class="kicker">Final project — TechBasics II &amp; a Kalman-filter seminar</p>
+        <h1 class="display">drip.py</h1>
+        <p class="lede" style="margin-top:26px;">
+            An infusion-drip monitor built from a nurse's frustration: drop rates on a
+            gravity infusion are still counted by eye and a wristwatch. drip.py watches
+            the chamber for you — and, more interestingly, learns to trust what it sees.
+        </p>
+    </div>
+
+    <div class="band">
+        <img src="images/drip_prototype.jpeg" alt="The drip.py prototype mounted on an infusion stand">
+    </div>
+
+    <div class="wrap">
+        <section>
+            <div class="split">
+                <div class="stack-gap">
+                    <h2 class="display">How it works</h2>
+                    <p>An infrared beam sits across the drip chamber. Every falling drop
+                    breaks the beam for an instant; the Arduino counts those interruptions
+                    and turns them into a rate, using the clinical rule of thumb that about
+                    twenty drops make a millilitre.</p>
+                    <p>The live rate shows on a small OLED display. An RGB LED gives the
+                    at-a-glance reading a nurse actually wants from across a room: is the
+                    flow too slow, about right, or running too fast?</p>
+                    <div class="pills">
+                        <span class="pill"><span class="swatch s-red"></span>Low &lt; 0.67 mL/min</span>
+                        <span class="pill"><span class="swatch s-green"></span>In range 0.67–2.0</span>
+                        <span class="pill"><span class="swatch s-blue"></span>Fast &gt; 2.0</span>
+                    </div>
+                </div>
+                <div>
+                    <table class="spec">
+                        <tr><th>Hardware</th><th></th></tr>
+                        <tr><td>Board</td><td>Arduino Uno</td></tr>
+                        <tr><td>Sensing</td><td>IR break-beam across the drip chamber</td></tr>
+                        <tr><td>Display</td><td>SSD1306 OLED (I²C)</td></tr>
+                        <tr><td>Signal</td><td>RGB LED, three states</td></tr>
+                    </table>
+                    <table class="spec" style="margin-top:36px;">
+                        <tr><th>Software</th><th></th></tr>
+                        <tr><td>Firmware</td><td>C++ (Arduino IDE)</td></tr>
+                        <tr><td>Display lib</td><td>U8g2</td></tr>
+                        <tr><td>On device</td><td>Exponential moving average</td></tr>
+                        <tr><td>Estimation</td><td>Kalman filter (MATLAB)</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <hr class="rule">
+
+        <section>
+            <div class="split">
+                <div>
+                    <img src="images/drip_schematic.png" alt="Fritzing circuit schematic for drip.py" style="border:1px solid var(--line); background:#fff;">
+                </div>
+                <div class="stack-gap">
+                    <h2 class="display">The turn</h2>
+                    <p>The sensor didn't behave. The curved plastic chamber and the moving
+                    liquid scatter infrared light, so the beam was constantly half-broken —
+                    false counts, impossible drop rates, a signal that looked more like noise
+                    than measurement.</p>
+                    <p>That failure became the actual project. The question stopped being
+                    "how do I detect a drop" and became "how do I recover the true flow rate
+                    from a measurement I can't trust?"</p>
+                    <p class="pull" style="margin:28px 0 0;">The project shifted from building a
+                    system that measures to building one that interprets uncertain reality.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="rule">
+
+        <section>
+            <div class="stack-gap" style="max-width:680px;">
+                <h2 class="display">The Kalman layer</h2>
+                <p>In a parallel statistics seminar I'd been learning about the Kalman
+                filter — a method for estimating the hidden state of a system by combining
+                a prediction with each noisy new measurement, weighting them by how much
+                each can be trusted.</p>
+                <p>That's exactly the drip problem. The true flow rate is the hidden state;
+                the IR sensor gives a noisy observation of it. In the MATLAB simulation the
+                estimated signal stays close to the true flow while the raw measurement jumps
+                around it — the filter refuses to overreact to a single strange reading, which
+                is precisely the behaviour a monitoring system needs.</p>
+            </div>
+        </section>
+
+        <hr class="rule">
+
+        <section>
+            <div class="stack-gap" style="max-width:680px;">
+                <h2 class="display">What it is, and isn't</h2>
+                <p>drip.py is a working proof of concept, not a medical device — it isn't
+                calibrated or validated for clinical use, and it isn't meant to be. What it
+                demonstrates is a way of thinking: that a healthcare observation problem can
+                be translated into a physical build, and that the honest answer to an
+                unreliable sensor is often better interpretation, not better hardware.</p>
+                <p class="footnote-src">Full code, MATLAB implementation and documentation:
+                <a href="https://github.com/sasokru/FinalProject25-26" target="_blank">github.com/sasokru/FinalProject25-26</a></p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap footer-inner">
+        <div class="footer-note">Hamburg</div>
+        <div class="footer-links">
+            <a href="https://github.com/sasokru" target="_blank">GitHub</a>
+            <a href="mailto:Sarah.S.Kruschinski@stud.leuphana.de">Email</a>
+            <a href="index.html">About</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
