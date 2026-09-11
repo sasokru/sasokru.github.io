@@ -25,19 +25,19 @@
 
 <main>
     <div class="wrap hero" style="padding-bottom:48px;">
-        <p class="kicker">Final project — TechBasics II &amp; a Kalman-filter seminar</p>
+        <p class="kicker">Final project from TechBasics II &amp; a Kalman-filter seminar</p>
         <h1 class="display">drip.py</h1>
         <p class="lede" style="margin-top:26px;">
-            An infusion-drip monitor built from a nurse's frustration: drop rates on a
-            gravity infusion are still counted by eye and a wristwatch. drip.py watches
-            the chamber for you — and, more interestingly, learns to trust what it sees.
+            An infusion-drip monitor built from a nurse's (my) frustration: drop rates on a
+            gravity infusion are still counted by eye and a wristwatch and do not alarm when done. drip.py watches
+            the chamber for you and learns to give output on what it sees.
         </p>
     </div>
 
     <div class="band">
         <img src="images/drip_sketch.png" alt="Early concept sketch of the drip.py hardware setup" style="background:#fff; object-fit:contain; height:clamp(280px, 46vw, 500px);">
     </div>
-    <p class="footnote-src wrap" style="margin-top:10px;">The first sketch — before any wiring existed.</p>
+    <p class="footnote-src wrap" style="margin-top:10px;">The first sketch before any wiring existed.</p>
 
     <div class="band" style="margin-top:44px;">
         <img src="images/drip_prototype.jpeg" alt="The drip.py prototype mounted on an infusion stand">
@@ -91,8 +91,8 @@
                 <div class="stack-gap">
                     <h2 class="display">The turn</h2>
                     <p>The sensor didn't behave. The curved plastic chamber and the moving
-                    liquid scatter infrared light, so the beam was constantly half-broken —
-                    false counts, impossible drop rates, a signal that looked more like noise
+                    liquid scatter infrared light, so the beam was constantly half-broken, resulting in
+                    false counts and a signal that looked more like noise
                     than measurement.</p>
                     <p>That failure became the actual project. The question stopped being
                     "how do I detect a drop" and became "how do I recover the true flow rate
@@ -110,7 +110,7 @@
                 <div class="stack-gap">
                     <h2 class="display">The Kalman layer</h2>
                     <p>In a parallel statistics seminar I'd been learning about the Kalman
-                    filter — a method for estimating the hidden state of a system by combining
+                    filter, which is a method for estimating the hidden state of a system by combining
                     a prediction with each noisy new measurement, weighting them by how much
                     each can be trusted.</p>
                     <p>That's exactly the drip problem. The true flow rate is the hidden state;
@@ -122,6 +122,7 @@
                 <div>
                     <img src="images/drip_kalman_plot.png" alt="Simulation plot: true, measured and Kalman-estimated drip rate over time" style="border:1px solid var(--line);">
                     <p class="footnote-src" style="margin-top:10px;">Simulated drip rate — true signal (black), noisy measurement (red), Kalman-estimated signal (blue).</p>
+                    <p class="footnote-src" style="margin-top:6px;">Full write-up: <a href="kalman_report.pdf">download the project report (PDF)</a></p>
                 </div>
             </div>
         </section>
@@ -131,11 +132,11 @@
         <section>
             <div class="stack-gap" style="max-width:680px;">
                 <h2 class="display">What it is, and isn't</h2>
-                <p>drip.py is a working proof of concept, not a medical device — it isn't
+                <p>drip.py is a working proof of concept.It isn't
                 calibrated or validated for clinical use, and it isn't meant to be. What it
                 demonstrates is a way of thinking: that a healthcare observation problem can
                 be translated into a physical build, and that the honest answer to an
-                unreliable sensor is often better interpretation, not better hardware.</p>
+                unreliable sensor is often better interpretation.</p>
                 <p class="footnote-src">Full code, MATLAB implementation and documentation:
                 <a href="https://github.com/sasokru/FinalProject25-26" target="_blank">github.com/sasokru/FinalProject25-26</a></p>
             </div>
