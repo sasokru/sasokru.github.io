@@ -6,7 +6,7 @@
 <title>drip.py — Sarah Kruschinski</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,8 +35,14 @@
     </div>
 
     <div class="band">
+        <img src="images/drip_sketch.png" alt="Early concept sketch of the drip.py hardware setup" style="background:#fff; object-fit:contain; height:clamp(280px, 46vw, 500px);">
+    </div>
+    <p class="footnote-src wrap" style="margin-top:10px;">The first sketch — before any wiring existed.</p>
+
+    <div class="band" style="margin-top:44px;">
         <img src="images/drip_prototype.jpeg" alt="The drip.py prototype mounted on an infusion stand">
     </div>
+    <p class="footnote-src wrap" style="margin-top:10px;">The working prototype.</p>
 
     <div class="wrap">
         <section>
@@ -100,17 +106,23 @@
         <hr class="rule">
 
         <section>
-            <div class="stack-gap" style="max-width:680px;">
-                <h2 class="display">The Kalman layer</h2>
-                <p>In a parallel statistics seminar I'd been learning about the Kalman
-                filter — a method for estimating the hidden state of a system by combining
-                a prediction with each noisy new measurement, weighting them by how much
-                each can be trusted.</p>
-                <p>That's exactly the drip problem. The true flow rate is the hidden state;
-                the IR sensor gives a noisy observation of it. In the MATLAB simulation the
-                estimated signal stays close to the true flow while the raw measurement jumps
-                around it — the filter refuses to overreact to a single strange reading, which
-                is precisely the behaviour a monitoring system needs.</p>
+            <div class="split">
+                <div class="stack-gap">
+                    <h2 class="display">The Kalman layer</h2>
+                    <p>In a parallel statistics seminar I'd been learning about the Kalman
+                    filter — a method for estimating the hidden state of a system by combining
+                    a prediction with each noisy new measurement, weighting them by how much
+                    each can be trusted.</p>
+                    <p>That's exactly the drip problem. The true flow rate is the hidden state;
+                    the IR sensor gives a noisy observation of it. In the simulation, the
+                    estimated signal stays close to the true flow while the raw measurement
+                    jumps around it — the filter refuses to overreact to a single strange
+                    reading, which is precisely the behaviour a monitoring system needs.</p>
+                </div>
+                <div>
+                    <img src="images/drip_kalman_plot.png" alt="Simulation plot: true, measured and Kalman-estimated drip rate over time" style="border:1px solid var(--line);">
+                    <p class="footnote-src" style="margin-top:10px;">Simulated drip rate — true signal (black), noisy measurement (red), Kalman-estimated signal (blue).</p>
+                </div>
             </div>
         </section>
 
