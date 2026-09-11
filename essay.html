@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Geometry of Exclusion — Sarah Kruschinski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+        <a href="index.html" class="brand">Sarah Kruschinski</a>
+        <nav class="nav">
+            <a href="index.html">About</a>
+            <a href="drip.html">drip.py</a>
+            <a href="essay.html" class="current">Writing</a>
+            <a href="news.html">Digital Health</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="wrap-narrow essay">
+        <p class="kicker">Essay — Critical AI Studies, Prof. Stephan Scheel, 2026</p>
+        <h1 class="display" style="font-size:clamp(2.2rem,5.5vw,3.6rem);">The Geometry of Exclusion</h1>
+        <p class="lede" style="margin-top:22px;">Latent space and epistemic invisibility in medical AI — and what it means for the promise of equitable diagnostics.</p>
+        <p class="essay-meta">
+            Leuphana University &nbsp;·&nbsp; Digital Media, Net Criticism<br>
+            <a href="essay_full.docx">Download the full paper (with citations)</a>
+        </p>
+    </div>
+
+    <div class="wrap-narrow essay-body" style="padding-top:8px;">
+
+        <p>In the United States, hospitals long used a standard formula to estimate kidney
+        function called the estimated Glomerular Filtration Rate. For years it carried a built-in
+        variable called race, and it quietly assigned Black patients higher kidney-function
+        scores than their clinical situation justified. Its effect was concrete: later
+        referrals and longer waits on transplant lists, while actually no doctor was making a racial decision, but
+        the algorithm was doing it for them, and nobody questioned it, because it produced
+        results.</p>
+
+        <p>Medical AI is usually introduced as the cure for exactly this kind of unequal
+        treatment. It is supposed to be a technology that promises consistent, high-quality diagnosis regardless
+        of where you live or who treats you. That promise is real. But the eGFR case raises a
+        question that gets far less attention: whose body was the system actually built for?</p>
+
+        <p class="pull">To what extent does the latent space of medical AI render certain bodies epistemically invisible?</p>
+
+        <h2>Data is never neutral</h2>
+        <p>It is tempting to treat AI as pure mathematics, and therefore objective. But the
+        mathematics only ever operate on the data they are given, and that data comes from
+        somewhere specific. More than half of published clinical AI studies draw on data from
+        just two countries. The patients most likely to appear are those with access to
+        tertiary care at research hospitals, enrolled in studies, whose records can be used
+        under the right consent frameworks. This isn't deliberate exclusion, as it's simply how
+        research data is produced. But the effect is systematic: some populations are
+        structurally present in the training data, and others are structurally absent.</p>
+
+        <h2>Latent space as infrastructure</h2>
+        <p>To see where exclusion enters the model, look at what happens between the input (e.g. a
+        medical image)  and the output (e.g. a diagnosis). That in-between is the latent space.
+        When a model trains, it doesn't memorise images; it builds a compressed internal
+        representation of the patterns across them. That representation is effectively the
+        model's theory of the body and what counts as a meaningful
+        difference.</p>
+
+        <p>And a theory is only as broad as the evidence it came from as made concrete by Schön and colleagues
+        (2022). Training generative models on a large set of thoracic CT
+        scans, they recovered the model's entire working vocabulary for the human thorax in eight
+        directions: width, height, size, rotation, position, thickness, breast size. Anything
+        that can be described by the model is a point along those eight axes. Anything that
+        cannot be found along them cannot really be processed at all.</p>
+
+        <h2>The geometry of absence</h2>
+        <p>Training images don't vanish into the model because each one leaves an imprint, making the
+        region of the space around it denser and more structured. Picture footpaths across open
+        ground: the more a path is walked, the more defined it becomes, and the more the next
+        walker naturally follows it. Training data walks the first paths.</p>
+
+        <p>So if a kind of body was never in the data, no path leads toward it. The space where
+        it would sit stays structurally uninhabited. not blocked, just never built. When the
+        model later meets such a patient, it still produces an output, often with high
+        confidence, but from a region of its own representation it never actually learned. The
+        problem ia that the space it thinks
+        through was never shaped to hold them.</p>
+
+        <h2>Hermeneutical injustice</h2>
+        <p>Miranda Fricker's idea of hermeneutical injustice names a harm that comes not from
+        individual bias but from a gap in the shared resources a community has for making sense
+        of an experience. The latent space is exactly such a resource. Those eight geometric
+        directions feel objective because they are geometry — but geometry learned from specific
+        patients, in specific hospitals, at a specific time. A patient outside that vocabulary
+        isn't merely harder to classify as they are rendered unintelligible, because the
+        categories were never formed around bodies like theirs.</p>
+
+        <p>This doesn't stay in the architecture. Dermatology systems trained mostly on lighter
+        skin have shown markedly worse melanoma detection on darker skin which is a gap that often went
+        unreported. An ICU mortality model trained on open intensive-care data showed recall as
+        low as 25% for Black patients relative to the overall population. The model
+        was operating exactly within the parameters its data had set.</p>
+
+        <h2>Trust, and how bias becomes invisible</h2>
+        <p>At the point of care, these structural gaps turn into decisions. Studying
+        endoscopists judging the same lesions with and without AI, Reverberi and colleagues
+        (2022) measured how far physicians shifted toward the AI's recommendation which totaled an influence
+        weight of about three. Clinicians weighted the machine's opinion roughly three times
+        more than their own independent judgement, even when they believed they were reasoning
+        for themselves.</p>
+
+        <p>And once trust in a tool is established, it is applied uniformly — to every patient,
+        including those the model represents poorly. The disparities that begin in the geometry
+        of the latent space are absorbed into practice, laundered through trust, and made
+        structurally invisible.</p>
+
+        <h2>Conclusion</h2>
+        <p>The eGFR formula has since been revised. But as an example it shows how an instrument
+        built with clinical good intentions can encode assumptions that produce unequal outcomes
+        at scale  and how those outcomes escape scrutiny precisely because they sit inside a
+        trusted tool. Medical AI is no different as the harm begins in the geometry of the latent
+        space, a structure shaped by the specific bodies in the training data and simply empty
+        where they were absent.</p>
+
+        <p>None of this is an argument against medical AI. It's an argument for taking it
+        seriously enough to build it better: demographic transparency in how datasets are
+        documented, mandatory subgroup analysis in evaluation, and data collection that actually
+        includes the people most affected. The latent space can only speak for all of us if it
+        was built from all of us, which I see as not only an ethical demand but a mathematical
+        one, since a model can only ever generalise what it has seen.</p>
+
+        <p class="footnote-src" style="margin-top:40px;">Full paper, with complete citations and
+        bibliography: <a href="essay_full.docx">download the DOCX</a>. Key sources include
+        Fricker (2007), Schön et al. (2022), Cross et al. (2024), Reverberi et al. (2022),
+        and Raley &amp; Rhee (2023).</p>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap footer-inner">
+        <div class="footer-note">Hamburg</div>
+        <div class="footer-links">
+            <a href="https://github.com/sasokru" target="_blank">GitHub</a>
+            <a href="mailto:Sarah.S.Kruschinski@stud.leuphana.de">Email</a>
+            <a href="index.html">About</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
