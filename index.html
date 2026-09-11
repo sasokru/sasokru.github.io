@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarah Kruschinski</title>
+<title>Digital Health — Sarah Kruschinski</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,87 +15,84 @@
     <div class="topbar">
         <a href="index.html" class="brand">Sarah Kruschinski</a>
         <nav class="nav">
-            <a href="index.html" class="current">About</a>
+            <a href="index.html">About</a>
             <a href="drip.html">drip.py</a>
             <a href="essay.html">Writing</a>
-            <a href="news.html">Digital Health News</a>
+            <a href="news.html" class="current">Digital Health</a>
         </nav>
     </div>
 </header>
 
 <main>
-    <div class="wrap hero">
-        <div class="hero-grid">
-            <div>
-                <p class="kicker">Nurse, and student of digital media &amp; informatics</p>
-                <h1 class="display">Between the ward<br>and the machine.</h1>
-                <p class="lede" style="margin-top:28px;">
-                    Hi, I'm Sarah! I'm a nurse at UKE Hamburg studying Digital Media and
-                    Business Informatics at Leuphana. I spend my time where clinical
-                    care meets technology, and I write and build things that live in
-                    that overlap.
-                </p>
-            </div>
-            <div class="hero-portrait">
-                <!-- replace with a real portrait: images/portrait.jpg -->
-                <img src="images/drip_prototype.jpeg" alt="">
-            </div>
-        </div>
+    <div class="wrap-narrow essay">
+        <p class="kicker">A reading list, kept by hand</p>
+        <h1 class="display" style="font-size:clamp(2.2rem,5.5vw,3.6rem);">Digital health,<br>read closely</h1>
+        <p class="lede" style="margin-top:22px;">
+            A there's a lot happening nowadays (lots of noice also) with AI in medicine. These are the sources I actually
+            read to cut through it, which a mix of reported journalism, clinical evidence, and the
+            responsible-AI research that my own writing draws on. Each one comes with a note
+            on why it earns the attention.
+        </p>
     </div>
 
-    <div class="wrap">
-        <section style="padding-top:24px;">
-            <h2 class="display" style="margin-bottom:32px;">What I'm working on</h2>
-            <div class="rows">
-                <a class="row-link" href="drip.html">
-                    <div>
-                        <div class="row-title">drip.py</div>
-                        <div class="row-desc">An Arduino infusion-drip monitor that reads drop rate with an infrared beam and estimates true flow with a Kalman filter. Hardware from the TechBasics seminar at Uni combined with math from a statistics seminar.</div>
-                    </div>
-                    <div class="row-meta">Hardware &middot; C++ &middot; MATLAB</div>
-                </a>
-                <a class="row-link" href="essay.html">
-                    <div>
-                        <div class="row-title">The Geometry of Exclusion</div>
-                        <div class="row-desc">An essay on medical AI: how the latent space of a diagnostic model can render some bodies epistemically invisible, and what that means for the promise of equitable diagnostics.</div>
-                    </div>
-                    <div class="row-meta">Essay &middot; Critical AI</div>
-                </a>
-                <a class="row-link" href="news.html">
-                    <div>
-                        <div class="row-title">Digital Health, read closely</div>
-                        <div class="row-desc">A small, hand-kept reading list on AI and technology in healthcare, which are the sources I actually follow, with a note on why each one is worth your time.</div>
-                    </div>
-                    <div class="row-meta">Reading list</div>
-                </a>
-            </div>
-        </section>
+    <div class="wrap-narrow" style="padding:56px 0;">
 
-        <section>
-            <div class="split">
-                <div class="stack-gap">
-                    <h2 class="display">A short version</h2>
-                    <p>I started in nursing and still work on the ward at UKE. Being close to
-                    patient care is where most of my questions come from, such as why a piece of
-                    hospital software gets in the way, why a monitor beeps at the wrong moment,
-                    why a diagnostic tool works better for some patients than others.</p>
-                    <p>Since 2024 I've been studying Digital Media and Business Informatics at
-                    Leuphana, with a minor in business administration. I'm most interested in
-                    digital health and healthcare process modelling / strategy. Increasingly I also research about the
-                    quieter question of how these systems decide what counts as normal.</p>
-                </div>
-                <div>
-                    <table class="spec">
-                        <tr><th colspan="2">At a glance</th></tr>
-                        <tr><td>Now</td><td>Nurse, UKE Hamburg</td></tr>
-                        <tr><td>Study</td><td>Digital Media (B.A.) &amp; Business Informatics (B.Sc.), Leuphana</td></tr>
-                        <tr><td>Minor</td><td>Business Administration</td></tr>
-                        <tr><td>Focus</td><td>Digital health, Health Teach Design / Strategy, clinical AI</td></tr>
-                        <tr><td>Next</td><td>Internship in summer 2027, semester abroad</td></tr>
-                    </table>
-                </div>
+        <h2 class="display" style="font-size:1.5rem; margin:0 0 8px;">Reported journalism</h2>
+        <div style="margin-bottom:48px;">
+            <div class="news-item">
+                <h3><a href="https://www.statnews.com/category/health-tech/" target="_blank">STAT — Health Tech</a></h3>
+                <div class="news-source">statnews.com</div>
+                <p class="news-note">If I could only keep one, this is it! A real newsroom
+                covering FDA regulation of AI, devices and clinical deployment with proper
+                sourcing. Their free Health Tech newsletter comes out twice a week.</p>
             </div>
-        </section>
+            <div class="news-item">
+                <h3><a href="https://digitalhealthwire.com/" target="_blank">Digital Health Wire</a></h3>
+                <div class="news-source">digitalhealthwire.com</div>
+                <p class="news-note">Big recommendation! This fast twice-weekly digest of what actually happened in
+                digital health, like product launches and the occasional industry absurdity.
+                Good for staying current without reading everything.</p>
+            </div>
+            <div class="news-item">
+                <h3><a href="https://www.healthcareitnews.com/" target="_blank">Healthcare IT News</a></h3>
+                <div class="news-source">healthcareitnews.com</div>
+                <p class="news-note">The hospital-IT side lives in the systems, procurement,
+                and integration stories that matter if you care about how technology lands on an
+                actual ward rather than in a demo.</p>
+            </div>
+        </div>
+
+        <h2 class="display" style="font-size:1.5rem; margin:0 0 8px;">Evidence &amp; analysis</h2>
+        <div style="margin-bottom:48px;">
+            <div class="news-item">
+                <h3><a href="https://erictopol.substack.com/" target="_blank">Ground Truths — Eric Topol</a></h3>
+                <div class="news-source">erictopol.substack.com</div>
+                <p class="news-note">Topol reads the actual trials and data and tells you clearly
+                what medical AI can and can't yet do.Consistently the most trustworthy signal I've found.</p>
+            </div>
+            <div class="news-item">
+                <h3><a href="https://raise.stanford.edu/" target="_blank">RAISE Health — Stanford</a></h3>
+                <div class="news-source">raise.stanford.edu</div>
+                <p class="news-note">A Stanford Medicine and HAI initiative on responsible AI in
+                health. This is the academic basics of exactly the questions my essay is about.</p>
+            </div>
+            <div class="news-item">
+                <h3><a href="https://medicalfuturist.com/" target="_blank">The Medical Futurist</a></h3>
+                <div class="news-source">medicalfuturist.com</div>
+                <p class="news-note">Bigger-picture, "what does this mean" analysis of where medicine
+                and technology are heading.</p>
+            </div>
+        </div>
+
+        <h2 class="display" style="font-size:1.5rem; margin:0 0 8px;">Why I keep this list</h2>
+        <p style="margin-top:14px;">
+            My essay on medical AI argues that a diagnostic model can only ever generalise what
+            it has seen and that bias enters through the data long before anyone notices it in the
+            clinic. Give it a read :)
+        </p>
+        <p class="footnote-src" style="margin-top:20px;">
+            Links go to each source directly. Last reviewed September 2026.
+        </p>
     </div>
 </main>
 
@@ -105,7 +102,7 @@
         <div class="footer-links">
             <a href="https://github.com/sasokru" target="_blank">GitHub</a>
             <a href="mailto:Sarah.S.Kruschinski@stud.leuphana.de">Email</a>
-            <a href="news.html">Digital Health</a>
+            <a href="index.html">About</a>
         </div>
     </div>
 </footer>
