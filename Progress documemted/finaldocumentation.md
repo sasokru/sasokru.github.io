@@ -5,18 +5,18 @@ Documentation · MD
 Sarah Kruschinski · Web Programming SS26 · Leuphana University
 Live site: https://sasokru.github.io
  
----
+
  
-## 1. Overview
+## 1. in General
  
 My website project is a multi-page personal portfolio website, built with 
 HTML and CSS and deployed on GitHub Pages. It consists of four pages:
  
-- **About** (`index.html`) — introduction, short bio, CV overview
-- **drip.py** (`drip.html`) — deep-dive on my Arduino/Kalman-filter final project from TechBasics II
-- **Writing** (`essay.html`) — web version of my Critical AI Studies essay on medical AI
-- **Digital Health** (`news.html`) — a curated, hand-kept reading list of digital health sources
----
+. **About** (`index.html`) — introduction, short bio, CV overview
+. **drip.py** (`drip.html`) — deep-dive on my Arduino/Kalman-filter final project from TechBasics II
+. **Writing** (`essay.html`) — web version of my Critical AI Studies essay on medical AI
+. **Digital Health** (`news.html`) — a curated, hand-kept reading list of digital health sources
+
  
 ## 2. Design process
  
