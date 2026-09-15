@@ -30,7 +30,7 @@
         <p class="lede" style="margin-top:26px;">
             An infusion-drip monitor built from a nurse's (my) frustration: drop rates on a
             gravity infusion are still counted by eye and a wristwatch and do not alarm when done. drip.py watches
-            the chamber for you and learns to give output on what it sees.
+            the chamber for you and learns to give output on its input.
         </p>
     </div>
 
@@ -50,7 +50,7 @@
                 <div class="stack-gap">
                     <h2 class="display">How it works</h2>
                     <p>An infrared beam sits across the drip chamber. Every falling drop
-                    breaks the beam for an instant; the Arduino counts those interruptions
+                    breaks the beam for an instant and the Arduino counts those interruptions
                     and turns them into a rate, using the clinical rule of thumb that about
                     twenty drops make a millilitre.</p>
                     <p>The live rate shows on a small OLED display. An RGB LED gives the
@@ -90,12 +90,11 @@
                 </div>
                 <div class="stack-gap">
                     <h2 class="display">The turn</h2>
-                    <p>The sensor didn't behave. The curved plastic chamber and the moving
+                    <p>The sensor didn't behave, because the curved plastic chamber and the moving
                     liquid scatter infrared light, so the beam was constantly half-broken, resulting in
                     false counts and a signal that looked more like noise
                     than measurement.</p>
-                    <p>That failure became the actual project. The question stopped being
-                    "how do I detect a drop" and became "how do I recover the true flow rate
+                    <p>That failure became the actual project. The question became "how do I recover the true flow rate
                     from a measurement I can't trust?"</p>
                     <p class="pull" style="margin:28px 0 0;">The project shifted from building a
                     system that measures to building one that interprets uncertain reality.</p>
@@ -113,15 +112,15 @@
                     filter, which is a method for estimating the hidden state of a system by combining
                     a prediction with each noisy new measurement, weighting them by how much
                     each can be trusted.</p>
-                    <p>That's exactly the drip problem. The true flow rate is the hidden state;
+                    <p>That's exactly the drip problem. The true flow rate is the hidden state and
                     the IR sensor gives a noisy observation of it. In the simulation, the
                     estimated signal stays close to the true flow while the raw measurement
-                    jumps around it — the filter refuses to overreact to a single strange
+                    jumps around it and the filter refuses to overreact to a single strange
                     reading, which is precisely the behaviour a monitoring system needs.</p>
                 </div>
                 <div>
                     <img src="images/drip_kalman_plot.png" alt="Simulation plot: true, measured and Kalman-estimated drip rate over time" style="border:1px solid var(--line);">
-                    <p class="footnote-src" style="margin-top:10px;">Simulated drip rate — true signal (black), noisy measurement (red), Kalman-estimated signal (blue).</p>
+                    <p class="footnote-src" style="margin-top:10px;">Simulated drip rate : true signal (black), noisy measurement (red), Kalman-estimated signal (blue).</p>
                     <p class="footnote-src" style="margin-top:6px;">Full write-up: <a href="kalman_report.pdf">download the project report (PDF)</a></p>
                 </div>
             </div>
@@ -132,7 +131,7 @@
         <section>
             <div class="stack-gap" style="max-width:680px;">
                 <h2 class="display">What it is, and isn't</h2>
-                <p>drip.py is a working proof of concept.It isn't
+                <p>drip.py is a working proof of concept, but it isn't
                 calibrated or validated for clinical use, and it isn't meant to be. What it
                 demonstrates is a way of thinking: that a healthcare observation problem can
                 be translated into a physical build, and that the honest answer to an
